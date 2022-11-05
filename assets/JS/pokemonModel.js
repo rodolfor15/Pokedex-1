@@ -3,5 +3,6 @@ class Pokemon {
     name
     types = []
     photo
+    abilities = []
 }
 

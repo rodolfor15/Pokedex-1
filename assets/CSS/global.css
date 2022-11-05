@@ -10,6 +10,6 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #EEE;
+    background-color: #1E1E1E;
     transition: all .1s ease-in-out;
 }

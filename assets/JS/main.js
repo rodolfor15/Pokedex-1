@@ -17,7 +17,8 @@ function loadPokemons(offset, limit) {
 
         <div class="detail">
           <ol class="types">
-            ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
+            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+         
           </ol>
           <img src="${pokemon.photo}" alt="${pokemon.name}">
        </div>
@@ -34,7 +35,6 @@ loadPokemons(offset, limit)
 
 buttonMore.addEventListener('click', () => {
   
-
   offset += limit
   const qtdRecords = offset + limit
 
@@ -45,12 +45,10 @@ buttonMore.addEventListener('click', () => {
     buttonMore.parentElement.remove()
 
   } else {
-
     loadPokemons(offset, limit)
   }
 
 })
-
 
 const buttonTheme = document.querySelector('#theme')
 buttonTheme.addEventListener('click', changeTheme)

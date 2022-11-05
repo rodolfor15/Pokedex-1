@@ -1,13 +1,16 @@
 .content {
     padding: 1.5rem;
-    background-image: url(../themeImages/lightTheme\ -\ pokedex.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #282828;
     height: 100vh;
     width: 100vw;
     box-shadow: 4px 0px 8px 2px rgba(0, 0, 0, 0.28);
     transition: all .1s ease-in-out;
+}
+
+.pokedex-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .content h1 {
@@ -18,6 +21,59 @@
     margin-left: 1rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
 }
+
+/*botão modo dark ou light*/
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: #EEE;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #2F2F2F;
+    background: var(--background);
+    transition: .5s;
+}
+
+input:checked+.slider {
+    background-color: #EEE;
+}
+
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #F2B90C;
+}
+
 
 .pokemons {
     list-style: none;
@@ -34,11 +90,13 @@
     border-radius: 1rem;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.pokemon:hover {
-    transform: scale(1.05);
+.pokemon:hover{ 
+    transform: scale(1.1);
 }
+
 
 .number {
     color: #000;
@@ -55,6 +113,8 @@
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+/*estilização de todos os tipos de pokemons*/
 
 .bug {
     background: rgb(148, 163, 20);
@@ -151,8 +211,8 @@
 }
 
 .type {
-    background-color: rgba(0, 0, 0, 0.3);
     color: #FFF;
+    font-weight: bold;
     font-size: .9rem;
     text-align: center;
     padding: .4rem;
@@ -179,6 +239,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 .pagination button {
@@ -209,68 +270,23 @@
     transform: translateY(-1px);
 }
 
-.pokedex-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.content button {
-    padding: 10px 15px;
-    border: unset;
-    border-radius: .4rem;
-    color: #212121;
-    z-index: 1;
-    background: #e8e8e8;
-    position: relative;
-    font-weight: 1000;
-    font-size: .8rem;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.content button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: .4rem;
-    background-color: #F2B90C;
-    z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms
-}
-
-.content button:hover {
-    color: #e8e8e8;
-}
-
-.content button:hover::before {
-    width: 100%;
-}
 
 /*mudança de tema*/
 
 .changeThemeBody {
-    background: #3d1e42;
+    background: #EEE;
     transition: all .1s ease-in-out;
 }
 
 .changeThemeContent {
-    background-image: url(../themeImages/darkTheme\ -pokedex.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #D9D9D9;
     height: 100vh;
     width: 100vw;
 }
+
+/*FIM*/
+
+/*media queries*/
 
 @media screen and (min-width: 380px) {
 

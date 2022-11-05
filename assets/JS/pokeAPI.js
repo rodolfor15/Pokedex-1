@@ -9,6 +9,11 @@ function modelConversor(pokeDetails) {
     const types =  pokeDetails.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
     
+    const abilities =  pokeDetails.abilities.map((abilitySlot) => abilitySlot.ability.name)
+    const [ability] = abilities 
+    
+    pokemon.abilities = abilities
+    pokemon.ability = ability
     pokemon.types = types
     pokemon.type = type
     pokemon.photo = pokeDetails.sprites.other.dream_world.front_default

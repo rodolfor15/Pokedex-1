@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./assets/icon/pokemon-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/CSS/global.css">
     <link rel="stylesheet" href="./assets/CSS/pokedex.css">
-    <title>Pokedex</title>
+    <title>Pokédex</title>
 </head>
 
 <body id="body">
@@ -16,21 +16,25 @@
     <section class="content">
 
         <div class="pokedex-header">
-            <h1>Pokedex</h1>
+            <h1>Pokédex</h1>
 
-            <button id="theme"><i class="fa-solid fa-lightbulb"></i></button>
+            <label class="switch" >
+                <input type="checkbox">
+                <span class="slider" id="theme"></span>
+            </label>
         </div>
 
 
 
         <ol class="pokemons" id="pokemonList">
-
+            
         </ol>
 
 
         <div class="pagination">
 
-            <button id="btnMore">Ver Mais</button>
+            <button id="btnMore"><i class="fa-solid fa-plus"></i></button>
+         
         </div>
 
     </section>
