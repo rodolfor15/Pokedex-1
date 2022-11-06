@@ -1,8 +1,10 @@
 class Pokemon {
-    number
     name
-    types = []
+    weight
+    height
+    number
     photo
+    types = []
     abilities = []
 }
 

@@ -10,21 +10,43 @@ function loadPokemons(offset, limit) {
     const newHtml = pokemons.map((pokemon) =>
 
       `
-    <li class="pokemon ${pokemon.type}">
+    <div class="flip-card">
 
-    <span class="number">${`#${pokemon.number}`}</span>
-    <span class="name">${pokemon.name}</span>
+      <div class="flip-card-inner">
 
-        <div class="detail">
-          <ol class="types">
-            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-         
-          </ol>
-          <img src="${pokemon.photo}" alt="${pokemon.name}">
-       </div>
+        <div class="flip-card-front ${pokemon.type}">
 
-    </li>
-    
+        <div class="pokemonInf">
+            <h3 id="pokemonName">${pokemon.name}</h3>
+            <span id="pokemonID">${`#${pokemon.number}`}</span>
+        </div>
+
+        <img src="${pokemon.photo}" alt="${pokemon.name}">
+      
+        <ol class="types">
+          ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+        </ol>
+
+        </div>
+
+        <div class="flip-card-back ${pokemon.type}">
+        <div class="backInf">
+            <p class="backInfTitle"><strong>Height:</strong></p>
+            <p id="height" class="inf">${pokemon.height}</p>
+        </div>
+        <div class="backInf">
+            <p class="backInfTitle"><strong>Weight:</strong></p>
+            <p id="weight" class="inf">${pokemon.weight}</p>
+        </div>
+        <div class="backInf">
+            <p class="backInfTitle"><strong>Abilites:</strong></p>
+            <div class="inf">
+              ${pokemon.abilities.map((ability) => `<li class="">${ability.replace('-', ' ')}</li>`).join('')}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
     `
     ).join('')
     pokemonsList.innerHTML += newHtml
@@ -34,13 +56,13 @@ function loadPokemons(offset, limit) {
 loadPokemons(offset, limit)
 
 buttonMore.addEventListener('click', () => {
-  
+
   offset += limit
   const qtdRecords = offset + limit
 
   if (qtdRecords >= maxRecords) {
 
-    const newLimit =  maxRecords - offset
+    const newLimit = maxRecords - offset
     loadPokemons(offset, newLimit)
     buttonMore.parentElement.remove()
 

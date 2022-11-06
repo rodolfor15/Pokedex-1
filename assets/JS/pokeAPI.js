@@ -5,6 +5,8 @@ function modelConversor(pokeDetails) {
     const pokemon = new Pokemon()
     pokemon.name = pokeDetails.name
     pokemon.number = pokeDetails.id
+    pokemon.weight = pokeDetails.weight
+    pokemon.height = pokeDetails.height
 
     const types =  pokeDetails.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
