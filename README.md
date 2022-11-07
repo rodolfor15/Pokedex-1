@@ -1,6 +1,6 @@
 # Projeto Pokédex consumindo a API PokeApi 🕹
 
-Olá! Seja bem vindo(a) a meu projeto Pokédex. Nesse projeto foi desenvolvido uma "Pokédex" que nada mais é que uma simples aplicação que te retorna a lista de 151 pokemons
+Olá! Seja bem vindo(a) a meu projeto Pokédex. Nesse projeto foi desenvolvido uma "Pokédex" que nada mais é que uma aplicação que te retorna a lista de 151 pokemons
 (podendo ser mais, depende de ajustes no código) e tudo isso feito dinamicamente, pois utiliza da API chamada PokeApi.
 
 # Imagem do projeto
