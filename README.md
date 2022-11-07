@@ -5,6 +5,8 @@ Olá! Seja bem vindo(a) a meu projeto Pokédex. Nesse projeto foi desenvolvido u
 
 # Imagem do projeto
 
+![pokédex](https://user-images.githubusercontent.com/89361241/200202793-39b7f750-b832-4bd8-b13a-d0975696d08d.png)
+
 ### Link do Projeto
 
 - https://pokedexlucascordeiro.netlify.app
